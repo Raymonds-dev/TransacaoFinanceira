@@ -2,13 +2,10 @@
 name = "transacaofinanceira"
 version = "0.1.0"
 description = ""
-authors = [
-    {name = "Gabriel Ramon",email = "garamon97@gmail.com"}
-]
+authors = [{ name = "Gabriel Ramon", email = "garamon97@gmail.com" }]
 readme = "README.md"
 requires-python = ">=3.14"
-dependencies = [
-]
+dependencies = []
 
 
 [build-system]
@@ -19,5 +16,15 @@ build-backend = "poetry.core.masonry.api"
 dev = [
     "pytest (>=9.0.2,<10.0.0)",
     "pytest-cov (>=7.0.0,<8.0.0)",
-    "pytest-sugar (>=1.1.1,<2.0.0)"
+    "pytest-sugar (>=1.1.1,<2.0.0)",
 ]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+
+[tool.coverage.run]
+source = ["src"]
+omit = ["src/tests/*"]
+
+[tool.coverage.report]
+omit = ["src/tests/*"]
